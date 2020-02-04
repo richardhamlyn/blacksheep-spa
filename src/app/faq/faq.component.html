@@ -1,0 +1,36 @@
+<div style="text-align: center">
+    <img class="" src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_1517341864/crownpeak-dxm.png" height="120px"/> 
+</div>
+<!-- Accordion with Dynamic FAQ -->
+<h2>FAQ: {{category}}</h2>
+<div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      FAQ Filter
+    </button>
+    <div class="dropdown-menu">
+      <h5 class="dropdown-header">Category</h5>
+      <a class='dropdown-item' (click)="setCategory('Internet')" href="#" routerLink="/faqs">Internet</a>
+      <a class="dropdown-item" (click)="setCategory('TV')" href="#" routerLink="/faqs">TV</a>
+      <a class="dropdown-item" (click)="setCategory('Phone')" routerLink="/faqs">Phone</a>
+    </div>
+  </div>
+  <br />
+<div id="accordion" class="panel-group" *ngFor="let qa of faqArray; let i = index" style="width: 600px;">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#container-{{ i }}">{{qa.question }}</a>
+      </div>
+      <div id="container-{{ i }}" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+            {{ qa.answer }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setCategory(cat){
+        //category = cat;
+        alert('Catgeory set: ' + cat);
+    }
+    </script>
