@@ -17,7 +17,7 @@ export class FaqComponent {
   results = '';
   public faqs: IFaq[];
   private resultCount;
-  public category = 'Internet';
+  public category = 'Company';
   faqArray = [];
   faq = new FaqModel();
   constructor(private http: HttpClient) {}
@@ -38,7 +38,8 @@ export class FaqComponent {
     */
     this.http.get(
       // tslint:disable-next-line:max-line-length
-      'https://searchg2.crownpeak.net/demoexperience-salesengineering-stage-rti/select/?q=*:*&fq=custom_s_category:' + this.category + '&wt=json&indent=true')
+      // 'https://searchg2.crownpeak.net/demoexperience-salesengineering-stage-rti/select/?q=*:*&fq=custom_s_category:' + this.category + '&wt=json&indent=true')
+      'https://searchg2.crownpeak.net/sales.surety.financial/select/?q=*:*&fq=custom_s_category:' + this.category + '&wt=json&indent=true')
       .subscribe((data: any) => {
         // Show json response in console
         console.log(data);
