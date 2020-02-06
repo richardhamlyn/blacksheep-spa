@@ -1,39 +1,39 @@
 <div style="text-align: center">
     <img class="" src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_1517341864/crownpeak-dxm.png" height="120px"/> 
 </div>
-<div class="bgimg-1">
-    <div class="caption">
-    <span class="border">Regional News Update</span>
+<div class="news-inner" *ngFor="let news of newsArray; let i = index">
+  <div class="bgimg-1">
+      <div class="caption">
+      <span class="border">{{ news.main_title }}</span>
+      </div>
+    </div>
+    <br />
+    <div style="color: #777;background-color:transparent;text-align:center;padding:50px 80px;text-align: justify;">
+      <h3 style="text-align:center;">{{ news.main_heading }}</h3>
+      <div [innerHTML]="htmlContent"></div>
+    </div>
+    <div class="bgimg-2">
+      <div class="caption">
+      <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">{{ news.top_label }}</span>
+      </div>
+    </div>
+
+    <div style="position:relative;">
+      <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+        <div [innerHTML]="htmlSubContent"></div>
+      </div>
+    </div>
+    
+
+    <div class="bgimg-3">
+      <div class="caption">
+      <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">{{ news.lower_label }}</span>
+      </div>
     </div>
   </div>
-  <br />
-  <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
-    <h3 style="text-align:center;">This is London</h3>
-    <p>
-        London is the capital and largest city of England and of the United Kingdom. Standing on the River Thames in the south-east of England, at the head of its 50-mile (80 km) estuary leading to the North Sea, London has been a major settlement for two millennia. Londinium was founded by the Romans. The City of London, London's ancient core − an area of just 1.12 square miles (2.9 km2) and colloquially known as the Square Mile − retains boundaries that closely follow its medieval limits.  The City of Westminster is also an Inner London borough holding city status. Greater London is governed by the Mayor of London and the London Assembly.
-        </p>
-  </div>
-
-  <div class="bgimg-2">
-    <div class="caption">
-    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Tower Bridge</span>
-    </div>
-  </div>
-
-  <div style="position:relative;">
-    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-    <p>Enter our competition to win tickets to any of the top attractions in London.</p>
-    <button type="button" class="btn btn-primary">Enter</button>
-    </div>
-  </div>
-  
-
-  <div class="bgimg-3">
-    <div class="caption">
-    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">London Attrctions</span>
-    </div>
-  </div>
-
+<script>
+alert("Passing Variable: " + this.htmlStr)
+</script>
   <!--
   <div style="position:relative;">
     <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
